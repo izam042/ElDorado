@@ -44,6 +44,14 @@
   color: #fff;
   margin-bottom: 1.5rem;
 }
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .cta-btn {
   background: #FFD700;
   color: #0D1B2A;
@@ -55,8 +63,29 @@
   cursor: not-allowed;
   position: relative;
   box-shadow: 0 2px 12px 0 #FFD70033;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
+
+.survey-btn {
+  background: #fff;
+  color: #0D1B2A;
+  font-weight: bold;
+  border: 2px solid #FFD700;
+  border-radius: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px 0 rgba(255, 215, 0, 0.2);
+}
+
+.survey-btn:hover {
+  background: #FFD700;
+  color: #0D1B2A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px 0 rgba(255, 215, 0, 0.3);
+}
+
 .coming-soon {
   background: #3E4C59;
   color: #FFD700;
@@ -318,6 +347,15 @@
   
   .tally-form-wrapper {
     padding: 1rem;
+  }
+
+  .hero-buttons {
+    gap: 0.8rem;
+  }
+
+  .survey-btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.95rem;
   }
 }
 

@@ -32,6 +32,16 @@ function App() {
     };
   }, []);
 
+  const scrollToSurvey = () => {
+    const surveySection = document.querySelector('.survey-form');
+    if (surveySection) {
+      surveySection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="eldorado-root">
       {/* Hero Section */}
@@ -52,9 +62,14 @@ function App() {
         <div className="hero-content">
           <h1>Own a Piece of El Dorado</h1>
           <p className="subtext">Invest in real estate. Starting from just ₹10,000.</p>
-          <button className="cta-btn" disabled>
-            Download App <span className="coming-soon">Coming Soon</span>
-          </button>
+          <div className="hero-buttons">
+            <button className="cta-btn" disabled>
+              Download App <span className="coming-soon">Coming Soon</span>
+            </button>
+            <button className="survey-btn" onClick={scrollToSurvey}>
+              Take Survey 📝
+            </button>
+          </div>
         </div>
       </section>
 
