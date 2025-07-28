@@ -256,22 +256,85 @@
   margin-bottom: 0.7rem;
 }
 .footer-legal {
-  font-size: 0.95rem;
-  color: #FFD700;
+  text-align: center;
+  color: #3E4C59;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Survey Form Styles */
+.survey-form {
+  background: #fff;
+  color: #0D1B2A;
+  padding: 3rem 1.5rem 3rem 1.5rem;
+  text-align: center;
+}
+
+.survey-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.survey-form h2 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0D1B2A;
+}
+
+.survey-form p {
+  font-size: 1.1rem;
+  color: #3E4C59;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.tally-form-wrapper {
+  background: #F5F6FA;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(13, 27, 42, 0.1);
+  margin-top: 1rem;
+}
+
+.tally-form-wrapper iframe {
+  border-radius: 0.8rem;
+  background: transparent;
+}
+
+/* Responsive adjustments for survey form */
+@media (max-width: 700px) {
+  .survey-form {
+    padding: 2rem 1rem 2rem 1rem;
+  }
+  
+  .survey-form h2 {
+    font-size: 1.8rem;
+  }
+  
+  .survey-form p {
+    font-size: 1rem;
+  }
+  
+  .tally-form-wrapper {
+    padding: 1rem;
+  }
 }
 
 /* Responsive Styles */
 @media (max-width: 700px) {
   .steps, .reasons {
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
   }
+
   .step-card, .reason-card {
     width: 100%;
-    max-width: 100vw;
+    max-width: 300px;
   }
+
   .footer-links {
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 1rem;
   }
 }

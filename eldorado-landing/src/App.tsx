@@ -1,6 +1,37 @@
 import './App.css';
+import { useEffect } from 'react';
+
+// Declare Tally global type
+declare global {
+  interface Window {
+    Tally?: {
+      loadEmbeds: () => void;
+    };
+  }
+}
 
 function App() {
+  useEffect(() => {
+    // Load Tally script
+    const script = document.createElement('script');
+    script.src = 'https://tally.so/widgets/embed.js';
+    script.async = true;
+    script.onload = () => {
+      if (typeof window.Tally !== 'undefined') {
+        window.Tally.loadEmbeds();
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      const existingScript = document.querySelector('script[src="https://tally.so/widgets/embed.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   return (
     <div className="eldorado-root">
       {/* Hero Section */}
@@ -104,8 +135,26 @@ function App() {
         </div>
       </section>
 
-      {/* Waitlist Signup */}
-      
+      {/* Survey Form */}
+      <section className="survey-form">
+        <div className="survey-container">
+          <h2>Help Us Build Better</h2>
+          <p>Share your thoughts and help shape the future of real estate investing</p>
+          <div className="tally-form-wrapper">
+            <iframe 
+              data-tally-src="https://tally.so/embed/3x5Pzo?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" 
+              loading="lazy" 
+              width="100%" 
+              height={1597}
+              frameBorder="0" 
+              marginHeight={0}
+              marginWidth={0}
+              title="Eldorado - Real estate investment made affordable"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="footer">
         
