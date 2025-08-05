@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect } from 'react';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 // Declare Tally global type
 declare global {
